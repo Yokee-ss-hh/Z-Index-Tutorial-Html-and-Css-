@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Z-Index Tutorial by Yokesh</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .Forall{
+                width:100px;
+                height:100px;
+                display: inline-block;
+                margin:80px 30px;
+                border-radius: 7px;
+            }
+            /*Before z-index property*/
+            #b-1{
+                background-color:springgreen;
+                position: relative;
+            }
+            #b-2{
+                position: relative;
+                left:-90px;
+                top:30px;
+                background-color:fuchsia;
+            }
+            #b-3{
+                background-color: blue;
+                position: relative;
+                left:-180px;
+                top:60px;
+            }
+            /* Initially , before specifiying any z-index property in all 3 divisions , blue is above pink , pink is above green . This is by default styling..  
+                Lets specify z-index to all 3 divisions , the division which has higher z-index will be on the top of their immediate lower z-index division..
+            */
+            /* After z-index property*/
+            #b-4{
+                background-color:springgreen;
+                position: relative;
+                z-index:20;
+            }
+            #b-5{
+                position: relative;
+                left:-90px;
+                top:30px;
+                background-color:fuchsia;
+                z-index:10;
+            }
+            #b-6{
+                background-color: blue;
+                position: relative;
+                left:-180px;
+                top:60px;
+                z-index:2;
+            }
+            /* After z-index , div with id b-4 has high z-index so it is on top of div with id b-5* and div with id b-5 has more z-index than div with id b-6,
+              so div with id b-5 is on top of div with id b-6..
+            */
+        </style>
+    </head>
+    <body>
+        <!--Copy this code and run in browser to get an crystal clear idea about z-index..-->
+        <!--Thank You-->
+        <div id="b-1" class="Forall"></div>
+        <div id="b-2" class="Forall"></div>
+        <div id="b-3" class="Forall"></div>
+        <hr><br><hr>
+        <div id="b-4" class="Forall"></div>
+        <div id="b-5" class="Forall"></div>
+        <div id="b-6" class="Forall"></div>
+    </body>
+</html>
